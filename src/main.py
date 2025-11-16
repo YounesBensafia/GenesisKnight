@@ -6,13 +6,13 @@ from animation import animate
 with open("config.yaml", "r") as f:
     config = yaml.safe_load(f)
 
-population = config["population_size"]
+population_size = config["population_size"]
 max_generations = config["max_generations"]
 fitness_target = config["fitness_target"]
 
 
 def run_genetic_algorithm():
-    population = Population(population_size=population)
+    population = Population(population_size=population_size)
     while population.generation < max_generations:
         population.check_population()
         best_knight, fitness = population.evaluate()
